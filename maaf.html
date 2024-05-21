@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permintaan Maaf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #container {
+            display: inline-block;
+            text-align: left;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #noBtn {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Tolong maafkan saya</h1>
+    <button id="yesBtn">Iya</button>
+    <button id="noBtn">Tidak</button>
+</div>
+
+<script>
+    const noBtn = document.getElementById('noBtn');
+    const container = document.getElementById('container');
+
+    noBtn.addEventListener('mouseover', function() {
+        const containerRect = container.getBoundingClientRect();
+        const newX = Math.random() * (window.innerWidth - containerRect.width);
+        const newY = Math.random() * (window.innerHeight - containerRect.height);
+        
+        noBtn.style.left = newX + 'px';
+        noBtn.style.top = newY + 'px';
+    });
+
+    document.getElementById('yesBtn').addEventListener('click', function() {
+        alert('Terima kasih telah memaafkan!');
+    });
+</script>
+
+</body>
+</html>
